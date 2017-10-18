@@ -1,0 +1,78 @@
+h1
+{
+
+  color: #000000;
+  font-family: "Monotype Corsiva" Cursive;
+  font-weight: normal;
+}
+
+body
+{
+  background-color: #B8BCBB;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  top: -23px;
+  height: 100%;
+}
+
+html
+{
+  background-color: #B8BCBB;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+
+div.Page
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding:0px;
+  width: 80%;
+  height: 100%;
+  position: relative;
+  top:0px;
+  left: 10%;
+  background-color: #FFFFFF;
+  background-position: center;
+}
+
+div.navigation
+{
+background-color: #006064;
+font-size: 150%;
+margin: auto;
+}
+
+td.navigation
+{
+ width:15%;
+ text-align: center;
+}
+
+footer
+{
+  background-color: #9C9E90;
+}
+
+
+div.navigation a:link {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+div.navigation a:visited {
+color: #FFFFFF;
+}
+
+div.navigation a:hover {
+color: #000000;
+}
+
+div.navigation a:active {
+color: #FFFFFF;
+}

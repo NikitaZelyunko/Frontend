@@ -1,0 +1,17 @@
+.wrapper .controls label
+{
+  background: yellow;
+  height: 10px;
+  width: 10px;
+}
+
+.wrapper .controls
+{
+  height: 30px;
+  width: 100px;
+}
+.wrapper label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1)
+{
+  background: red;
+}
