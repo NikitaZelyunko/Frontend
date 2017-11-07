@@ -35,6 +35,43 @@ function eventHandler() {
 
     }
 
+    function getCartData() {
+        return JSON.parse(localStorage.getItem('vine-app_cart'));
+    }
+
+    function setCartData(data) {
+        localStorage.setItem('vine-app_cart', JSON.stringify(data));
+        return true;
+    }
+
+    function AddToCart() {
+        this.disabled = true;
+        var item = get_item(this.id);
+        var item_id = item._id,
+            item_title = item.name,
+            item_price = item.price,
+            item_year = item.year;
+        var cart_data = getCartData();
+        if (cart_data) {
+            if (cart_data[item_id]) {
+
+                cart_data[item_id][3]++;
+            } else {
+                cart_data[item_id] = [item_title, item_price, item_year, 1];
+
+            }
+            setCartData(cart_data);
+
+        } else {
+            cart_data = {};
+            cart_data[item_id] = [item_title, item_price, item_year, 1];
+            setCartData(cart_data);
+
+        }
+        this.disabled = false;
+    }
+
+
     function load_item_in_catalog(index_item) {
 
         var catalog = document.getElementsByClassName('catalog')[0];
@@ -81,6 +118,8 @@ function eventHandler() {
         var input_button = document.createElement('input');
         input_button.value = "BUY";
         input_button.type = 'button';
+        input_button.id = item.index;
+        input_button.addEventListener("click", AddToCart);
         item_catalog_button.appendChild(input_button);
 
         item_catalog_border.appendChild(item_catalog_picture);
