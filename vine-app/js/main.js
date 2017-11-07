@@ -12,8 +12,114 @@ function eventHandler() {
     var _data = getData();
     console.log(_data);
 
+    function get_item(index_item) {
+
+        if (!isNaN(index_item)) {
+            if (index_item >= 0) {
+                var data = getData()
+                if (index_item < data.length) {
+                    var item = data[index_item];
+                    return item;
+                } else {
+                    print("Item not found.");
+                    return undefined;
+                }
+            } else {
+                print("index_item not correct (<0)");
+                return undefined;
+            }
+        } else {
+            print("index_item not correct (not a number)");
+            return undefined;
+        }
+
+    }
+
+    function load_item_in_catalog(index_item) {
+
+        var catalog = document.getElementsByClassName('catalog')[0];
+
+        var item_catalog = document.createElement('div');
+        item_catalog.className = 'item_catalog';
+
+        var item_catalog_border = document.createElement('div');
+        item_catalog_border.className = "item_catalog_border";
+
+        var item_catalog_picture = document.createElement('div');
+        item_catalog_picture.className = 'item_catalog_picture';
+
+        var item_catalog_name = document.createElement('div');
+        item_catalog_name.className = 'item_catalog_name';
+
+        var item_catalog_price = document.createElement('div')
+        item_catalog_price.className = 'item_catalog_price';
+
+        var item_catalog_year = document.createElement('div')
+        item_catalog_year.className = 'item_catalog_year';
+
+        var item_catalog_button = document.createElement('div')
+        item_catalog_button.className = 'item_catalog_button';
+
+        var item = get_item(index_item);
+
+        var img = document.createElement('img');
+        img.src = item.picture;
+        item_catalog_picture.appendChild(img);
+
+        var p1 = document.createElement('p');
+        p1.textContent = item.name;
+        item_catalog_name.appendChild(p1);
+
+        var p2 = document.createElement('p');
+        p2.textContent = item.price;
+        item_catalog_price.appendChild(p2);
+
+        var p = document.createElement('p');
+        p.textContent = "Year: " + item.year;
+        item_catalog_year.appendChild(p);
+
+        var input_button = document.createElement('input');
+        input_button.value = "BUY";
+        input_button.type = 'button';
+        item_catalog_button.appendChild(input_button);
+
+        item_catalog_border.appendChild(item_catalog_picture);
+        item_catalog_border.appendChild(item_catalog_name);
+        item_catalog_border.appendChild(item_catalog_price);
+        item_catalog_border.appendChild(item_catalog_year);
+        item_catalog_border.appendChild(item_catalog_button);
+
+        item_catalog.appendChild(item_catalog_border);
+
+        catalog.appendChild(item_catalog);
+        document.body.appendChild(catalog);
+    }
+
+    function load_more_button() {
+        var more_button = document.createElement('div');
+        more_button.className = 'more_items';
+        var input_button = document.createElement('input');
+        input_button.value = "MORE";
+        input_button.type = 'button';
+        more_button.appendChild(input_button);
+        document.getElementsByClassName('catalog')[0].appendChild(more_button);
+    }
+
+
+    function load_items_in_catalog() {
+        for (var i = 0; i < 9; i++) {
+            load_item_in_catalog(i);
+        }
+        load_more_button();
+    }
+
     function show_catalog() {
-        document.getElementsByClassName('catalog')[0].style.display = 'none';
+        document.getElementsByClassName('item')[0].style.display = 'none';
+        document.getElementsByClassName('catalog')[0].style.display = 'inline-block';
+        document.getElementsByClassName('shopping_cart')[0].style.display = 'inline-block';
+        load_items_in_catalog();
+
+
     }
 
     document.getElementById('button_catalog').addEventListener('click', show_catalog);
