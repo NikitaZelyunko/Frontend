@@ -134,22 +134,56 @@ function eventHandler() {
         document.body.appendChild(catalog);
     }
 
-    function load_more_button() {
+
+    function load_catalog(index,data_lenght)
+    {
+        function load_more_items_in_catalog()
+        {
+            document.getElementsByClassName('catalog')[0].removeChild(this);
+            var count;
+            if((index+9)<data_lenght)
+                count=9;
+            else 
+                count=data_lenght-index;
+            
+            for(var i=0;i<count;i++)
+                load_item_in_catalog(index+i);
+            
+            index+=count;
+            load_more_button(index,data_lenght);
+            
+        }
+        return load_more_items_in_catalog;
+    }
+
+
+    function load_more_button(index, data_lenght) {
         var more_button = document.createElement('div');
         more_button.className = 'more_items';
         var input_button = document.createElement('input');
         input_button.value = "MORE";
         input_button.type = 'button';
         more_button.appendChild(input_button);
+
+        more_button.addEventListener('click',load_catalog(index,data_lenght));
         document.getElementsByClassName('catalog')[0].appendChild(more_button);
+
+
     }
 
 
     function load_items_in_catalog() {
-        for (var i = 0; i < 9; i++) {
+        var data_lenght=getData().length;
+        var count;
+        if(data_lenght<9)
+            count=data_lenght;
+        else
+            count=9;
+
+        for (var i = 0; i < count; i++) {
             load_item_in_catalog(i);
         }
-        load_more_button();
+        load_more_button(count,data_lenght);
     }
 
     function show_catalog() {
@@ -157,8 +191,6 @@ function eventHandler() {
         document.getElementsByClassName('catalog')[0].style.display = 'inline-block';
         document.getElementsByClassName('shopping_cart')[0].style.display = 'inline-block';
         load_items_in_catalog();
-
-
     }
 
     document.getElementById('button_catalog').addEventListener('click', show_catalog);
