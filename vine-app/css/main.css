@@ -11,7 +11,7 @@ html {
     height: 100%;
     width: 100%;
     font-size: 0;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 div.vine {
@@ -248,7 +248,7 @@ div.shopping_cart {
     position: absolute;
     top: calc(100% - 70px);
     left: 580px;
-    z-index: 2;
+    z-index: 1;
     background: #ddd;
     display: none;
 }
@@ -278,7 +278,7 @@ div.shopping_cart p.shop_cart_price_cnt {
     margin-left: 10px;
 }
 
-div.shopping_cart a {
+div.shopping_cart input {
     background: red;
     position: relative;
     display: block;
@@ -297,6 +297,6 @@ div.shopping_cart a {
     color: #ffffff;
 }
 
-div.shopping_cart a:hover {
+div.shopping_cart input:hover {
     color: #000000;
 }

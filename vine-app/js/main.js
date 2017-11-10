@@ -71,6 +71,69 @@ function eventHandler() {
         this.disabled = false;
     }
 
+    function clearCartData() {
+        localStorage.removeItem('vine-app_cart');
+        document.getElementsByClassName('shopping_cart')[0].innerHTML = "";
+    }
+
+    function Hidden_Shopping_Cart() {
+        if (this) {
+            document.body.removeChild(this);
+            document.body.removeChild(document.getElementsByClassName('cart_block')[0]);
+        } else
+            return undefined;
+    }
+
+    function Show_Shopping_Cart() {
+
+        var cart_data = getCartData();
+        if (cart_data) {
+
+            var popUp = document.createElement('div');
+            popUp.className = "shop_cart_popUp";
+
+            var item_block, item_div, item_name, item_year, item_count, item_total, item_price;
+            item_block = document.createElement('div');
+            item_block.className = 'cart_block';
+
+            for (var item in cart_data) {
+                item_div = document.createElement('div');
+
+                item_name = document.createElement('p');
+                item_name.textContent = cart_data[item][0];
+
+                item_price = document.createElement('p');
+                item_price.textContent = cart_data[item][1];
+
+                item_year = document.createElement('p');
+                item_year.textContent = cart_data[item][2];
+
+                item_count = document.createElement('p');
+                item_count.textContent = cart_data[item][3];
+
+                item_total = document.createElement('p');
+                item_total.textContent = cart_data[item][1][0] + cart_data[item][1].slice(1) * cart_data[item][3];
+
+                item_div.appendChild(item_name);
+                item_div.appendChild(item_year);
+                item_div.appendChild(item_price);
+                item_div.appendChild(item_count);
+                item_div.appendChild(item_total);
+
+                item_block.appendChild(item_div);
+
+            }
+
+            popUp.addEventListener('click', Hidden_Shopping_Cart);
+
+            document.body.appendChild(popUp);
+            document.body.appendChild(item_block);
+
+        } else {
+            alert("Shopping cart is empty");
+        }
+    }
+
 
     function load_item_in_catalog(index_item) {
 
@@ -135,23 +198,21 @@ function eventHandler() {
     }
 
 
-    function load_catalog(index,data_lenght)
-    {
-        function load_more_items_in_catalog()
-        {
+    function load_catalog(index, data_lenght) {
+        function load_more_items_in_catalog() {
             document.getElementsByClassName('catalog')[0].removeChild(this);
             var count;
-            if((index+9)<data_lenght)
-                count=9;
-            else 
-                count=data_lenght-index;
-            
-            for(var i=0;i<count;i++)
-                load_item_in_catalog(index+i);
-            
-            index+=count;
-            load_more_button(index,data_lenght);
-            
+            if ((index + 9) < data_lenght)
+                count = 9;
+            else
+                count = data_lenght - index;
+
+            for (var i = 0; i < count; i++)
+                load_item_in_catalog(index + i);
+
+            index += count;
+            load_more_button(index, data_lenght);
+
         }
         return load_more_items_in_catalog;
     }
@@ -165,7 +226,7 @@ function eventHandler() {
         input_button.type = 'button';
         more_button.appendChild(input_button);
 
-        more_button.addEventListener('click',load_catalog(index,data_lenght));
+        more_button.addEventListener('click', load_catalog(index, data_lenght));
         document.getElementsByClassName('catalog')[0].appendChild(more_button);
 
 
@@ -173,23 +234,24 @@ function eventHandler() {
 
 
     function load_items_in_catalog() {
-        var data_lenght=getData().length;
+        var data_lenght = getData().length;
         var count;
-        if(data_lenght<9)
-            count=data_lenght;
+        if (data_lenght < 9)
+            count = data_lenght;
         else
-            count=9;
+            count = 9;
 
         for (var i = 0; i < count; i++) {
             load_item_in_catalog(i);
         }
-        load_more_button(count,data_lenght);
+        load_more_button(count, data_lenght);
     }
 
     function show_catalog() {
         document.getElementsByClassName('item')[0].style.display = 'none';
         document.getElementsByClassName('catalog')[0].style.display = 'inline-block';
         document.getElementsByClassName('shopping_cart')[0].style.display = 'inline-block';
+        document.getElementById('pay_button').addEventListener('click', Show_Shopping_Cart);
         load_items_in_catalog();
     }
 
