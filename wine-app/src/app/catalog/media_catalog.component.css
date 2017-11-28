@@ -1,0 +1,105 @@
+@media screen and (max-width: 1500px) {
+    div.real_catalog {
+        width: calc(320px * 3);
+    }
+    div.catalog {
+        width: calc(320px * 3);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    div.real_catalog {
+        width: calc(320px * 3);
+    }
+    div.catalog {
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1365px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1279px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (min-width: 1041px) and (max-width: 1179px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    div.real_catalog {
+        width: calc(320px * 2);
+    }
+    div.catalog {
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1039px) {
+    div.real_catalog {
+        width: calc(320px * 1);
+    }
+    div.catalog {
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    div.real_catalog {
+        width: calc(320px * 3);
+    }
+    div.catalog {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 959px) {
+    div.real_catalog {
+        position: relative;
+        left: calc(50% - 320px);
+        width: calc(320px * 2);
+    }
+}
+
+@media screen and (max-width: 639px) {
+    div.real_catalog {
+        position: relative;
+        left: calc(50% - 160px);
+        width: calc(320px * 1);
+    }
+}

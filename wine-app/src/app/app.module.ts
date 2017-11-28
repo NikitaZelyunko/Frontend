@@ -8,6 +8,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { WineItemComponent } from './wine-item/wine-item.component';
 
 import { DataService } from './data.service';
+import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 
 
@@ -22,7 +23,10 @@ import { CartComponent } from './cart/cart.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

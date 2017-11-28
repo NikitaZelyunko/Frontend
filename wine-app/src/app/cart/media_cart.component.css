@@ -1,0 +1,77 @@
+@media screen and (max-width: 1500px) {
+    div.shopping_cart {
+        left: calc(100% - 960px);
+        width: 960px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    div.shopping_cart {
+        left: 400px;
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1365px) {
+    div.shopping_cart {
+        left: 540px;
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    div.shopping_cart {
+        left: 540px;
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1279px) {
+    div.shopping_cart {
+        left: 540px;
+        width: calc(100% - 540px);
+    }
+}
+
+@media screen and (min-width: 1041px) and (max-width: 1179px) {
+    div.shopping_cart {
+        left: calc(100% - 640px);
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    div.shopping_cart {
+        left: 400px;
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1039px) {
+    div.shopping_cart {
+        left: 400px;
+        width: calc(100% - 400px);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    div.shopping_cart {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    div.shopping_cart p {
+        font-size: 14px;
+    }
+    div.shopping_cart p.shop_cart_bottle_cnt {
+        margin: 1px;
+    }
+    div.shopping_cart p.shop_cart_price_cnt {
+        margin: 1px;
+    }
+    div.shopping_cart button {
+        font-size: 14px;
+    }
+}
