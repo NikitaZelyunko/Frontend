@@ -1,0 +1,27 @@
+<div class="catalog">
+    <div class="item_catalog" *ngFor="let item of items">
+        <div class="item_catalog_border">
+
+            <div class="item_catalog_picture">
+                <img src="{{item.picture}}">
+            </div>
+
+            <div class="item_catalog_name">
+                <p>{{item.name}}</p>
+            </div>
+
+            <div class="item_catalog_price">
+                <p>{{item.price}}$</p>
+            </div>
+
+            <div class="item_catalog_year">
+                <p>Year: {{item.year}}</p>
+            </div>
+
+            <div class="item_catalog_button">
+                <input value="BUY" type="button" (click)="buy(item.id)">
+            </div>
+
+        </div>
+    </div>
+</div>

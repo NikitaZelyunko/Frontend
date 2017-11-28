@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 0px;
+}

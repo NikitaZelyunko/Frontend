@@ -1,0 +1,111 @@
+div.item_catalog {
+    display: inline-block;
+    position: relative;
+    width: 320px;
+    height: 480px;
+}
+
+div.item_catalog_border {
+    position: relative;
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+    margin: 20px 20px 0px 20px;
+    border: 1px solid;
+    background: #ffffff;
+    border-color: orange;
+}
+
+div.item_catalog_picture {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 10px 10px 10px;
+    width: calc(100% - 20px);
+    height: calc(50% - 20px);
+    background: #ddd;
+}
+
+div.item_catalog_picture img {
+    position: relative;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+div.item_catalog_name {
+    display: inline-block;
+    position: relative;
+    margin: 0 0 10px 10px;
+    width: calc(70% - 20px);
+    height: calc(20% - 10px);
+}
+
+div.item_catalog_name p {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+div.item_catalog_price {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 10px 0;
+    width: 30%;
+    height: calc(20% - 10px);
+    vertical-align: top;
+}
+
+div.item_catalog_price p {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    line-height: 1;
+    text-align: right;
+    font-family: monospace;
+}
+
+div.item_catalog_year {
+    display: inline-block;
+    position: relative;
+    margin: 10px 0 10px 10px;
+    width: calc(50% - 20px);
+    height: calc(10% - 10px);
+}
+
+div.item_catalog_year p {
+    font-size: 14px;
+}
+
+div.item_catalog_button {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 10px 10px;
+    width: calc(100% - 20px);
+    height: calc(20% - 20px);
+    background: red;
+}
+
+div.item_catalog_button input {
+    background: red;
+    position: relative;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+div.item_catalog_button input:hover {
+    color: #000000;
+}

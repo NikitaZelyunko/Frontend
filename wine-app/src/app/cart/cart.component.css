@@ -1,0 +1,57 @@
+div.shopping_cart {
+    width: calc(100% - 540px);
+    height: 70px;
+    position: absolute;
+    top: calc(100% - 70px);
+    left: 540px;
+    z-index: 1;
+    background: #ddd;
+}
+
+div.shopping_cart div {
+    position: relative;
+    display: inline-block;
+    width: 33.3%;
+    height: 100%;
+    font-size: 0;
+    vertical-align: top;
+}
+
+div.shopping_cart p {
+    font-size: 26px;
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    top: calc(50% - 13px);
+}
+
+div.shopping_cart p.shop_cart_bottle_cnt {
+    margin-left: 10px;
+}
+
+div.shopping_cart p.shop_cart_price_cnt {
+    margin-left: 10px;
+}
+
+div.shopping_cart button {
+    background: red;
+    position: relative;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 26px;
+    top: 20%;
+    left: 25%;
+    height: 60%;
+    width: 50%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+div.shopping_cart button:hover {
+    color: #000000;
+}

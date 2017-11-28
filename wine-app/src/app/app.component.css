@@ -1,0 +1,16 @@
+div.vine {
+    display: inline-block;
+    position: relative;
+    width: 540px;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../assets/img/background.jpg");
+    background-position-x: -75px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.vine img {
+    position: relative;
+    height: 100%;
+}
