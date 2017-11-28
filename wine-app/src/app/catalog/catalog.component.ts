@@ -15,7 +15,7 @@ import { CartService } from '../cart.service';
 })
 export class CatalogComponent implements OnInit {
 
-  items;
+  items: any;
   constructor(
     private dataService: DataService,
     private cartService: CartService
@@ -28,7 +28,7 @@ export class CatalogComponent implements OnInit {
     );
   }
 
-  buy(item: Array<any>) {
+  buy(item) {
     this.cartService.buyItem(item);
   }
 

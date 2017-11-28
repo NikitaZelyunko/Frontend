@@ -12,16 +12,26 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
 
-  price: number = 0;
-  bottles: number = 0;
-  cart: [number] =[0,0];
+  price = '0';
+  bottles = 0;
+  cart: [number, string] = [0, '0'];
 
   constructor(private cartService: CartService ) {}
 
-  ngOnInit() {
-      this.cart = this.cartService.getCart();
-      this.bottles = this.cart[0];
-      this.price = this.cart[1];
+  update() {
+    this.cart = this.cartService.getCart();
+    this.bottles = this.cart[0];
+    this.price = this.cart[1];
+
   }
+
+  ngOnInit() {
+      this.cartService.initCartComponent(this);
+      this.update();
+  }
+
+
+
+
 
 }
